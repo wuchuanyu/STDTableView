@@ -7,11 +7,13 @@
 //
 
 #import "UITableView+STDTableView.h"
-#import "STDTableViewConfig.h"
 
 #import <objc/runtime.h>
 
 static char kSTDTableViewDataSourceIdentifyKey;
+static char kSTDTableViewViewControllerKey;
+static char kSTDTableViewCellDelegateKey;
+static char kSTDTableViewHeaderFooterViewDelegateKey;
 
 @interface UITableView()
 
@@ -38,32 +40,41 @@ static char kSTDTableViewDataSourceIdentifyKey;
 
 - (UIViewController *)std_viewController
 {
-    return [STDTableViewConfig sharedConfig].viewController;
+    id (^block)(void) = objc_getAssociatedObject(self, &kSTDTableViewViewControllerKey);
+    return (block ? block() : nil);
 }
 
 - (void)setStd_viewController:(UIViewController *)viewController
 {
-    [STDTableViewConfig sharedConfig].viewController = viewController;
-}
-
-- (void)setStd_cellDelegate:(id<STDTableViewCellDelegate>)cellDelegate
-{
-    [STDTableViewConfig sharedConfig].cellDelegate = cellDelegate;
+    id __weak weakObj = viewController;
+    id (^block)(void) = ^{ return weakObj; };
+    objc_setAssociatedObject(self, &kSTDTableViewViewControllerKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (id<STDTableViewCellDelegate>)std_cellDelegate
 {
-    return [STDTableViewConfig sharedConfig].cellDelegate;
+    id (^block)(void) = objc_getAssociatedObject(self, &kSTDTableViewCellDelegateKey);
+    return (block ? block() : nil);
 }
 
-- (void)setStd_headerFooterViewDelegate:(id<STDTableViewHeaderFooterViewDelegate>)headerFooterViewDelegate
+- (void)setStd_cellDelegate:(id<STDTableViewCellDelegate>)cellDelegate
 {
-    [STDTableViewConfig sharedConfig].headerFooterViewDelegate = headerFooterViewDelegate;
+    id __weak weakObj = cellDelegate;
+    id (^block)(void) = ^{ return weakObj; };
+    objc_setAssociatedObject(self, &kSTDTableViewCellDelegateKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (id<STDTableViewHeaderFooterViewDelegate>)std_headerFooterViewDelegate
 {
-    return [STDTableViewConfig sharedConfig].headerFooterViewDelegate;
+    id (^block)(void) = objc_getAssociatedObject(self, &kSTDTableViewHeaderFooterViewDelegateKey);
+    return (block ? block() : nil);
+}
+
+- (void)setStd_headerFooterViewDelegate:(id<STDTableViewHeaderFooterViewDelegate>)headerFooterViewDelegate
+{
+    id __weak weakObj = headerFooterViewDelegate;
+    id (^block)(void) = ^{ return weakObj; };
+    objc_setAssociatedObject(self, &kSTDTableViewHeaderFooterViewDelegateKey, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 #pragma mark - constructor method.

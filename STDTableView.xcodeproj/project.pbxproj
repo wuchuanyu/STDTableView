@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		923E2CDE205D2BDE00DBB3A4 /* STDExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E2CDD205D2BDE00DBB3A4 /* STDExampleViewController.m */; };
-		923E2CE1205D43D400DBB3A4 /* STDTableViewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E2CE0205D43D400DBB3A4 /* STDTableViewConfig.m */; };
 		923E2CE5205DED6B00DBB3A4 /* STDExampleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 923E2CE2205DED6B00DBB3A4 /* STDExampleListCell.xib */; };
 		923E2CE6205DED6B00DBB3A4 /* STDExampleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E2CE4205DED6B00DBB3A4 /* STDExampleListCell.m */; };
 		923E2CE9205DEFA000DBB3A4 /* STDExampleListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E2CE7205DEFA000DBB3A4 /* STDExampleListItem.m */; };
@@ -39,8 +38,6 @@
 /* Begin PBXFileReference section */
 		923E2CDC205D2BDE00DBB3A4 /* STDExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDExampleViewController.h; sourceTree = "<group>"; };
 		923E2CDD205D2BDE00DBB3A4 /* STDExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDExampleViewController.m; sourceTree = "<group>"; };
-		923E2CDF205D43D400DBB3A4 /* STDTableViewConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDTableViewConfig.h; sourceTree = "<group>"; };
-		923E2CE0205D43D400DBB3A4 /* STDTableViewConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDTableViewConfig.m; sourceTree = "<group>"; };
 		923E2CE2205DED6B00DBB3A4 /* STDExampleListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STDExampleListCell.xib; sourceTree = "<group>"; };
 		923E2CE3205DED6B00DBB3A4 /* STDExampleListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDExampleListCell.h; sourceTree = "<group>"; };
 		923E2CE4205DED6B00DBB3A4 /* STDExampleListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDExampleListCell.m; sourceTree = "<group>"; };
@@ -220,8 +217,6 @@
 				92DE6C6F205D2A1D00DEA830 /* STDTableViewItem.m */,
 				92DE6C70205D2A1D00DEA830 /* STDTableViewSection.h */,
 				92DE6C71205D2A1D00DEA830 /* STDTableViewSection.m */,
-				923E2CDF205D43D400DBB3A4 /* STDTableViewConfig.h */,
-				923E2CE0205D43D400DBB3A4 /* STDTableViewConfig.m */,
 				92DE6C72205D2A1D00DEA830 /* UITableView+STDTableView.h */,
 				92DE6C73205D2A1D00DEA830 /* UITableView+STDTableView.m */,
 			);
@@ -302,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				923E2CE1205D43D400DBB3A4 /* STDTableViewConfig.m in Sources */,
 				92DE6C79205D2A1D00DEA830 /* STDTableViewItem.m in Sources */,
 				92DE6C7A205D2A1D00DEA830 /* STDTableViewSection.m in Sources */,
 				92DE6C77205D2A1D00DEA830 /* STDTableViewDataSource.m in Sources */,

@@ -10,7 +10,7 @@
 #import "STDTableViewDataSource.h"
 #import "STDTableViewSection.h"
 
-#import "STDTableViewConfig.h"
+#import "UITableView+STDTableView.h"
 
 @implementation STDTableViewHeaderFooterView
 
@@ -37,6 +37,8 @@
     headerView.tableView = tableView;
     headerView.data = sectionData.sectionHeaderData;
     headerView.section = section;
+    headerView.viewController = tableView.std_viewController;
+    headerView.delegate = tableView.std_headerFooterViewDelegate;
     
     [headerView loadContent];
     
@@ -52,6 +54,8 @@
     footerView.tableView = tableView;
     footerView.data = sectionData.sectionFooterData;
     footerView.section = section;
+    footerView.viewController = tableView.std_viewController;
+    footerView.delegate = tableView.std_headerFooterViewDelegate;
     
     [footerView loadContent];
     
@@ -87,9 +91,6 @@
 
 - (void)setupBaseConfig
 {
-    self.viewController = [STDTableViewConfig sharedConfig].viewController;
-    self.delegate = [STDTableViewConfig sharedConfig].headerFooterViewDelegate;
-    
     [self setupHeaderFooterView];
     [self buildSubview];
 }

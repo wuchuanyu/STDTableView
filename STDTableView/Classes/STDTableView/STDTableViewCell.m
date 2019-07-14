@@ -8,7 +8,7 @@
 
 #import "STDTableViewCell.h"
 #import "STDTableViewItem.h"
-#import "STDTableViewConfig.h"
+#import "UITableView+STDTableView.h"
 
 @implementation STDTableViewCell
 
@@ -34,9 +34,6 @@
 
 - (void)setupBaseConfig
 {
-    self.viewController = [STDTableViewConfig sharedConfig].viewController;
-    self.delegate = [STDTableViewConfig sharedConfig].cellDelegate;
-    
     [self setupCell];
     [self buildSubview];
 }
@@ -87,6 +84,8 @@
     _indexPath = indexPath;
     _item = item;
     _data = item.data;
+    _delegate = tableView.std_cellDelegate;
+    _viewController = tableView.std_viewController;
 }
 
 #pragma mark - cell data constructor

@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
-  s.name         = "STDTableView"
-  s.version      = "0.1.1"
+  s.name         = "wcy_STDTableView"
+  s.version      = "0.1.2"
   s.summary      = "STDTableView is a useful extension for UITableView"
 
   s.description  = <<-DESC
                       STDTableView is an complete, easy-to-use extension for UITableView.
                       DESC
 
-  s.homepage     = "https://github.com/XuQibin/STDTableView"
+  s.homepage     = "https://github.com/wuchuanyu/STDTableView"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-  s.author             = { "XuQibin" => "scrat_xu@163.com" }
+  s.author             = { "WuChuanyu" => "wuchuanyu@163.com" }
   # s.social_media_url   = "http://twitter.com/"
 
   s.platform     = :ios, "8.0"
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/XuQibin/STDTableView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/wuchuanyu/STDTableView.git", :tag => "#{s.version}" }
 
   s.source_files  = "STDTableView/Classes/STDTableView/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
